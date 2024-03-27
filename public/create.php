@@ -18,13 +18,13 @@ if (isset($_POST['submit'])) {
         );
         $statement = $connection->prepare($sql);
         $statement->execute($new_user);
-    } catch(PDOException $error) {
+    } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
 require "templates/header.php";
-if (isset($_POST['submit']) && $statement){
-    echo $new_user['firstname']. ' successfully added';
+if (isset($_POST['submit']) && $statement) {
+    echo $new_user['firstname'] . ' successfully added';
 }
 ?>
     <h2>Add a user</h2>

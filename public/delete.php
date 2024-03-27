@@ -11,8 +11,8 @@ if (isset($_GET["id"])) {
         $statement = $connection->prepare($sql);
         $statement->bindValue(':id', $id);
         $statement->execute();
-        $success = "User ". $id. " successfully deleted";
-    } catch(PDOException $error) {
+        $success = "User " . $id . " successfully deleted";
+    } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
@@ -22,7 +22,7 @@ try {
     $statement = $connection->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll();
-} catch(PDOException $error) {
+} catch (PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
 }
 ?>
